@@ -2,10 +2,40 @@ import React, { Component } from "react";
 
 import CourseSection from "../components/CourseSection";
 
-const domains = [
+const data = [
   {
     title: "Programming",
     courses: [
+      {
+        name: "JavaScript",
+        description:
+          "JavaScript is the programming language of HTML and the Web. This course will teach you JavaScript from basic to advanced."
+      },
+      {
+        name: "Python",
+        description:
+          "Python is an interpreted, high-level, general-purpose programming language.. This course will teach you Python from basic to advanced."
+      },
+      {
+        name: "C++",
+        description:
+          'C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes". This course will teach you C++ from basic to advanced.'
+      },
+      {
+        name: "JavaScript",
+        description:
+          "JavaScript is the programming language of HTML and the Web. This course will teach you JavaScript from basic to advanced."
+      },
+      {
+        name: "Python",
+        description:
+          "Python is an interpreted, high-level, general-purpose programming language.. This course will teach you Python from basic to advanced."
+      },
+      {
+        name: "C++",
+        description:
+          'C++ is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes". This course will teach you C++ from basic to advanced.'
+      },
       {
         name: "JavaScript",
         description:
@@ -50,19 +80,21 @@ export default class HomePage extends Component {
     super(props);
 
     this.state = {
-      domains
+      data
     };
   }
 
   render() {
-    const { domains } = this.state;
+    const { data } = this.state;
 
     return (
-      <div>
-        <h1>Online Learning App</h1>
-        {domains.map(domain => (
-          <CourseSection title={domain.title} courses={domain.courses} />
-        ))}
+      <div className="container">
+        <div className="inner-container">
+          <h1>Online Learning App</h1>
+          {data.map(domain => (
+            <CourseSection title={domain.title} courses={domain.courses} />
+          ))}
+        </div>
       </div>
     );
   }
