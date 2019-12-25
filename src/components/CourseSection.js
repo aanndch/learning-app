@@ -1,14 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import CourseCard from "./CourseCard";
 
 export default function CourseSection({ title, courses }) {
   return (
     <div className="course-section">
-      <h2>{title}</h2>
+      <Link
+        to={{
+          pathname: `/domain/${title}`,
+          state: { courses }
+        }}
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        <h2>{title}</h2>
+      </Link>
       <div className="courses">
-        {courses.map(course => (
-          <div className="course-card">
-            <h3>{course.name}</h3>
-          </div>
+        {courses.map((course, i) => (
+          <CourseCard course={course} key={`${course}${i}`} />
         ))}
       </div>
     </div>

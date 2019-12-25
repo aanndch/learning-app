@@ -14,7 +14,7 @@ const data = [
       {
         name: "Python",
         description:
-          "Python is an interpreted, high-level, general-purpose programming language.. This course will teach you Python from basic to advanced."
+          "Python is an interpreted, high-level, general-purpose programming language. This course will teach you Python from basic to advanced."
       },
       {
         name: "C++",
@@ -29,7 +29,7 @@ const data = [
       {
         name: "Python",
         description:
-          "Python is an interpreted, high-level, general-purpose programming language.. This course will teach you Python from basic to advanced."
+          "Python is an interpreted, high-level, general-purpose programming language. This course will teach you Python from basic to advanced."
       },
       {
         name: "C++",
@@ -44,7 +44,7 @@ const data = [
       {
         name: "Python",
         description:
-          "Python is an interpreted, high-level, general-purpose programming language.. This course will teach you Python from basic to advanced."
+          "Python is an interpreted, high-level, general-purpose programming language. This course will teach you Python from basic to advanced."
       },
       {
         name: "C++",
@@ -56,6 +56,36 @@ const data = [
   {
     title: "Design",
     courses: [
+      {
+        name: "Adobe XD",
+        description:
+          "Adobe XD is a vector-based user experience design tool for web apps and mobile apps, developed and published by Adobe Inc. This course will teach you JavaScript from basic to advanced."
+      },
+      {
+        name: "Figma",
+        description:
+          "A better way to design. Design, prototype, and gather feedback all in one place with Figma. This course will teach you Figma from basic to advanced."
+      },
+      {
+        name: "Adobe Photoshop",
+        description:
+          "Adobe Photoshop is a raster graphics editor developed and published by Adobe Inc. for Windows and macOS. This course will teach you JavaScript from basic to advanced."
+      },
+      {
+        name: "Adobe XD",
+        description:
+          "Adobe XD is a vector-based user experience design tool for web apps and mobile apps, developed and published by Adobe Inc. This course will teach you JavaScript from basic to advanced."
+      },
+      {
+        name: "Figma",
+        description:
+          "A better way to design. Design, prototype, and gather feedback all in one place with Figma. This course will teach you Figma from basic to advanced."
+      },
+      {
+        name: "Adobe Photoshop",
+        description:
+          "Adobe Photoshop is a raster graphics editor developed and published by Adobe Inc. for Windows and macOS. This course will teach you JavaScript from basic to advanced."
+      },
       {
         name: "Adobe XD",
         description:
@@ -88,14 +118,16 @@ export default class HomePage extends Component {
     const { data } = this.state;
 
     return (
-      <div className="container">
-        <div className="inner-container">
-          <h1>Online Learning App</h1>
-          {data.map(domain => (
-            <CourseSection title={domain.title} courses={domain.courses} />
-          ))}
-        </div>
-      </div>
+      <>
+        <h1>Online Learning App</h1>
+        {data.map((domain, i) => (
+          <CourseSection
+            key={`${domain}${i}`}
+            title={domain.title}
+            courses={domain.courses}
+          />
+        ))}
+      </>
     );
   }
 }
